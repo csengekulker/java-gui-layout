@@ -78,9 +78,17 @@ public class MainFrame extends JFrame {
 
     northPanel.add(northLabel);
 
+    southPanel.add(textButton);
     southPanel.add(exitButton);
-    southPanel.add(textButton); 
-
   }
-}
 
+  // getter
+  public JButton getExitButton () {
+    return exitButton;
+  }
+
+  // // getter
+  // public JButton getTexButton () {
+  //   return textButton;
+  // }
+}
