@@ -1,6 +1,8 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.BorderLayout;
 
 public class MainFrame extends JFrame {
   private JPanel mainPanel = new JPanel();
@@ -26,7 +28,21 @@ public class MainFrame extends JFrame {
   }
 
   private void setPanels() {
+    mainPanel.setBackground(Color.BLUE);
+    northPanel.setBackground(Color.CYAN);
 
+    //gridlayout settings for window object
+    this.setLayout(
+      new GridLayout(1, 1)
+    );
+
+    mainPanel.setLayout(
+      new BorderLayout()
+    );
+
+    //which borderlayout position: WHAT, WHERE
+    mainPanel.add(northPanel, BorderLayout.NORTH);
+    this.add(mainPanel);
   }
 
   private void setComponents() {
