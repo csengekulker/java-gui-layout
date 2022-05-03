@@ -1,9 +1,11 @@
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 
 public class MainFrame extends JFrame {
   private JPanel mainPanel = new JPanel();
@@ -13,7 +15,9 @@ public class MainFrame extends JFrame {
   private JPanel westPanel = new JPanel();
   private JPanel centerPanel = new JPanel();
 
-  private JLabel northLabel = new JLabel("North Label");
+  private JLabel northLabel;
+  private JButton exitButton;
+  private JButton textButton;
 
   public MainFrame() {
 
@@ -47,6 +51,10 @@ public class MainFrame extends JFrame {
       new BorderLayout()
     );
 
+    southPanel.setLayout(
+      new FlowLayout(FlowLayout.RIGHT)
+    );
+
     northPanel.setSize(400, 40);
     eastPanel.setSize(40, 320);
     southPanel.setSize(400, 40);
@@ -62,7 +70,17 @@ public class MainFrame extends JFrame {
   }
 
   private void setComponents() {
+
+    northLabel = new JLabel("North Label");
+
+    textButton = new JButton("Csere");
+    exitButton = new JButton("Kilépés");
+
     northPanel.add(northLabel);
+
+    southPanel.add(exitButton);
+    southPanel.add(textButton); 
+
   }
 }
 
