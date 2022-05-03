@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -11,6 +12,8 @@ public class MainFrame extends JFrame {
   private JPanel southPanel = new JPanel();
   private JPanel westPanel = new JPanel();
   private JPanel centerPanel = new JPanel();
+
+  private JLabel northLabel = new JLabel("North Label");
 
   public MainFrame() {
 
@@ -30,6 +33,10 @@ public class MainFrame extends JFrame {
   private void setPanels() {
     mainPanel.setBackground(Color.BLUE);
     northPanel.setBackground(Color.CYAN);
+    eastPanel.setBackground(Color.GREEN);
+    southPanel.setBackground(Color.RED);
+    westPanel.setBackground(Color.MAGENTA);
+    centerPanel.setBackground(Color.ORANGE);
 
     //gridlayout settings for window object
     this.setLayout(
@@ -40,13 +47,22 @@ public class MainFrame extends JFrame {
       new BorderLayout()
     );
 
+    northPanel.setSize(400, 40);
+    eastPanel.setSize(40, 320);
+    southPanel.setSize(400, 40);
+    westPanel.setSize(40, 320);
+
     //which borderlayout position: WHAT, WHERE
     mainPanel.add(northPanel, BorderLayout.NORTH);
+    mainPanel.add(eastPanel, BorderLayout.EAST);
+    mainPanel.add(southPanel, BorderLayout.SOUTH);
+    mainPanel.add(westPanel, BorderLayout.WEST);
+    mainPanel.add(centerPanel, BorderLayout.CENTER);
     this.add(mainPanel);
   }
 
   private void setComponents() {
-
+    northPanel.add(northLabel);
   }
 }
 
