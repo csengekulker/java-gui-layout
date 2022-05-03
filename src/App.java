@@ -12,10 +12,15 @@ public class App {
   //vezerlo 
 
   private static void EventHandler () {
-    mf.getExitButton().addActionListener(action -> exit(););
+    mf.getExitButton().addActionListener(action -> exit());
+    mf.getTextButton().addActionListener(action -> changeText());
   }
 
   private static void exit() {
     System.exit(0);
+  }
+
+  private static void changeText() {
+    mf.setNorthLabel("Csereszöveg");
   }
 }

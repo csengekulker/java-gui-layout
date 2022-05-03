@@ -15,7 +15,7 @@ public class MainFrame extends JFrame {
   private JPanel westPanel = new JPanel();
   private JPanel centerPanel = new JPanel();
 
-  private JLabel northLabel;
+  private JLabel northLabel  = new JLabel();
   private JButton exitButton;
   private JButton textButton;
 
@@ -71,7 +71,7 @@ public class MainFrame extends JFrame {
 
   private void setComponents() {
 
-    northLabel = new JLabel("North Label");
+    northLabel.setText("Eredeti szöveg");
 
     textButton = new JButton("Csere");
     exitButton = new JButton("Kilépés");
@@ -87,8 +87,13 @@ public class MainFrame extends JFrame {
     return exitButton;
   }
 
-  // // getter
-  // public JButton getTexButton () {
-  //   return textButton;
-  // }
+  // getter
+  public JButton getTextButton () {
+    return textButton;
+  }
+
+  // setter
+  public void setNorthLabel (String text) {
+    northLabel.setText(text);
+  }
 }
