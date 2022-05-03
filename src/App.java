@@ -2,16 +2,17 @@ import java.awt.event.ActionListener;
 // import java.awt.event.ActionEvent;
 
 public class App {
-  private static MainFrame mf;
+  static MainFrame mf = new MainFrame();
   public static void main(String[] args) throws Exception {
-   mf = new MainFrame();
 
-   // EventHandler();
+   EventHandler();
   }
 
   //vezerlo 
 
   private static void EventHandler () {
+    // MainFrame mf = new MainFrame();
+
     mf.getExitButton().addActionListener(action -> exit());
     mf.getTextButton().addActionListener(action -> changeText());
   }
@@ -21,6 +22,8 @@ public class App {
   }
 
   private static void changeText() {
+    // MainFrame mf = new MainFrame();
+
     mf.setNorthLabel("Csereszöveg");
   }
 }
